@@ -5,7 +5,7 @@
 
     $query = "INSERT INTO passwords (username, password)
               VALUES ('".$username."', '".$password."')";
-    $result = mysqli_query($link, $query);
+    mysqli_query($link, $query);
     
     header("Location:Default.php"); 
     

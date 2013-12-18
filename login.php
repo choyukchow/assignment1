@@ -3,14 +3,13 @@
     $password = $_POST['password'];
     $link = mysqli_connect("localhost", "root", "jc119@3fcmx", "assignment1");
 
-    $query = "SELECT * FROM user WHERE 
+    $query = "SELECT * FROM passwords WHERE 
               username = '".$username."' and password = '".$password."'";
     $result = mysqli_query($link, $query);
     $rows = mysqli_num_rows($result);
 
     if ($rows > 0) {
        session_start();
-       session_register("valid_user");
        $_SESSION['valid_user']=$username;
 
        header("Location:Default.php"); 
