@@ -8,7 +8,6 @@
     //require("default.php");
     $info = $_GET['info'];
     echo $info;
-    echo 1;
   ?>
 </body>
 </html>
