@@ -41,7 +41,8 @@
             while ($rows > 0) {
             	$current_blog = mysqli_fetch_assoc($result);
             	echo $current_blog['date'];
-            	echo "<a href = 'showpage.php?info=$current_blog'>".$current_blog['title']."</a>.<br>";
+                $serialized = serialize($current_blog);
+            	echo "<a href = 'showpage.php?id=".$serialized."'>".$current_blog['title']."</a>.<br>";
             	$rows = $rows - 1;
             }
 		?>

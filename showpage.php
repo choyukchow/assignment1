@@ -12,8 +12,9 @@
 <body>
   <?php
     require("default.php");
-    $info = $_GET['info'];
-    echo $info['title'];
+    $id = $_GET['id'];
+    $info = unserialize($id);
+    echo $info['content'];
   ?>
 </body>
 </html>
