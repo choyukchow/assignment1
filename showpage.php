@@ -15,22 +15,19 @@
     $result = mysqli_fetch_assoc($result_table);
 
     echo "<h1>".$result['title']."</h1><br>";
+    echo $result['username'];
     echo $result['date']."<br>";
-    echo $result['content'];    
+    echo $result['content']."<br>";  
+
+    if ($result['username'] === $_SESSION['valid_user']) {
+      echo "<a href='delete.php?blog_id=$blog_id'> Delete </a> | ";
+
+      echo "<a href='editpage.php?blog_id=$blog_id'> Edit </a>";
+    }
+
+  echo "<form action = 'default.php' method = 'post'>
+          <p> <input type = 'submit' value = 'Back to catalog'> </p>
+        </form>";
   ?>
-
-  <form action = "delete.php" method = "post">
-    <p> <input type = "submit" value = "Delete"> </p>
-    <p> <input type = "hidden" name = "blog_id" value = "<?php echo $blog_id ?>" > </p>
-  </form>
-
-  <form action = "editpage.php" method = "post">
-    <p> <input type = "submit" value = "Edit"> </p>
-    <p> <input type = "hidden" name = "blog_id" value = "<?php echo $blog_id ?>" > </p>
-  </form>
-
-  <form action = "default.php" method = "post">
-    <p> <input type = "submit" value = "Back to catalog"> </p>
-  </form>
 </body>
 </html>.
