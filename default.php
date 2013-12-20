@@ -35,7 +35,7 @@
 	<div id = "blogs">
 		<?php
 		    $link = mysqli_connect("localhost", "root", "jc119@3fcmx", "assignment1");
-		    $query = "SELECT * FROM blog";
+		    $query = "SELECT * FROM blog ORDER BY date DESC";
             $result = mysqli_query($link, $query);
            /* $query = "SELECT * FROM $result ORDER BY DATE DESC"; //??
             $result = mysqli_query($link, $query); */
