@@ -9,9 +9,9 @@
 
 <body>
 	<div id = "header">
-		<h1>
+		<h2>
 			<?php echo $_SESSION['valid_user']."'s"?> Blog
-	    </h1>
+	    </h2>
 
 	    <div class = "bar">
 
@@ -31,16 +31,17 @@
 	<div id = "blogs">
 		<?php
 		    $link = mysqli_connect("localhost", "root", "jc119@3fcmx", "assignment1");
-		    $query = "SELECT * FROM blog Where username = '".$_SESSION['valid_user']."'";
+		    $query = "SELECT * FROM blog Where username = '".$_SESSION['valid_user']."'"; //BY DATE DESC
             $result = mysqli_query($link, $query);
            /* $query = "SELECT * FROM $result ORDER BY DATE DESC"; //??
-            $result = mysqli_query($link, $query); */
+            $result = mysqli_query($link, $query);
+            $query = "SELECT * FROM blog ORDER BY date DESC"; */
             $rows = mysqli_num_rows($result);
 
             while ($rows > 0) {
             	$current_blog = mysqli_fetch_assoc($result);
             	echo $current_blog['date'];
-            	echo "<a href = 'showpage.php?blog_id=".$current_blog['Blog_ID']."'>".$current_blog['title']."</a>.<br>";
+            	echo "<a href = 'showpage.php?blog_id=".$current_blog['Blog_ID']."'>".$current_blog['title']."</a><br>";
             	$rows = $rows - 1;
             }
 		?>
