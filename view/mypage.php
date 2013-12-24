@@ -39,7 +39,7 @@
             while ($rows > 0) {
             	$current_blog = mysqli_fetch_assoc($result);
             	echo $current_blog['date'];
-            	echo "<a href = ".MODEL_DIR."/showpage.php?blog_id=".$current_blog['Blog_ID'].">".$current_blog['title']."</a><br>";
+            	echo "<a href = ".VIEW_DIR."/showpage.php?blog_id=".$current_blog['Blog_ID'].">".$current_blog['title']."</a><br>";
             	$rows = $rows - 1;
             }
 		?>
