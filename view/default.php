@@ -10,7 +10,7 @@
 <body>
 	<div id = "header">
 		<h2>
-			<?php echo $_SESSION['valid_user']."'s"?> Blog
+			Let's Blog!
 	    </h2>
 
 	    <div class = "bar">
