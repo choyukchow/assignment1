@@ -16,7 +16,13 @@
 
 	    <div class = "bar">
 
-        <a href = <?php echo VIEW_DIR.'/login.php';?>> Login </a>
+        <?php
+            if (isset($_SESSION['valid_user'])){
+                header('Location: '.VIEW_DIR.'/default.php');
+            } else {
+                echo "<a href = ".VIEW_DIR."/login.php> Login </a>";
+            } 
+        ?>
 
         <form action = <?php echo MODEL_DIR.'/search.php';?> method = "post">
 	    		<p> <input type = "text" name = "key" value = "title or date"> 
