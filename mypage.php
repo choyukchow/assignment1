@@ -31,7 +31,7 @@
 	<div id = "blogs">
 		<?php
 		    $link = mysqli_connect("localhost", "root", "jc119@3fcmx", "assignment1");
-		    $query = "SELECT * FROM blog Where username = '".$_SESSION['valid_user']."'"; //BY DATE DESC
+		    $query = "SELECT * FROM blog Where username = '".$_SESSION['valid_user']."' ORDER BY date DESC";
             $result = mysqli_query($link, $query);
            /* $query = "SELECT * FROM $result ORDER BY DATE DESC"; //??
             $result = mysqli_query($link, $query);
