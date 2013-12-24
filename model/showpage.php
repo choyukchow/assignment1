@@ -1,3 +1,6 @@
+<?php
+    include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
+?>
 <html>
 <head>
   <title> Show page. </title>
@@ -13,7 +16,7 @@
     //require("default.php");
     session_start();
     $blog_id = $_GET['blog_id'];
-    $link = mysqli_connect("localhost", "root", "jc119@3fcmx", "assignment1");
+    $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 
     $query = "SELECT * FROM blog Where Blog_ID = '".$blog_id."'";
     $result_table = mysqli_query($link, $query);
@@ -25,15 +28,15 @@
     echo "<div class='blogcontent'>".nl2br($result['content'])."<br></div>";  
 
     if ($result['username'] === $_SESSION['valid_user']) {
-      echo "<a href='delete.php?blog_id=$blog_id'> Delete </a> | <a href='editpage.php?blog_id=$blog_id'> Edit </a>";
+      echo "<a href=".MODEL_DIR.".'/delete.php?blog_id=$blog_id'> Delete </a> | <a href=".MODEL_DIR.".'/editpage.php?blog_id=$blog_id'> Edit </a>";
     }
 
-    echo "<form action = 'default.php' method = 'post'>
+    echo "<form action = ".VIEW_DIR.".'/default.php' method = 'post'>
             <p> <input type = 'submit' value = 'Back to catalog'> </p>
           </form>";
 
     //comment
-    echo "<form action = 'addcomment.php' method = 'post'>
+    echo "<form action = ".MODEL_DIR.".'/addcomment.php' method = 'post'>
              <h6> My Comment </h6>
              <p> <textarea rows='5' cols='50' name = 'comment'>My comment... </textarea> </p>
              <p> <input type = 'hidden' name = 'blog_id' value = '".$blog_id."'> </p>

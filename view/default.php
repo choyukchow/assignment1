@@ -16,7 +16,7 @@
 
 	    <div class = "bar">
 
-        <a href = <?php echo MODEL_DIR.'/logout.php';?>> Logout </a> | <a href = <?php echo VIEW_DIR.'mypage.php';?>> My Blogs. </a>
+        <a href = <?php echo MODEL_DIR.'/logout.php';?>> Logout </a> | <a href = <?php echo VIEW_DIR.'/mypage.php';?>> My Blogs. </a>
 
         <form action = <?php echo MODEL_DIR.'/search.php';?> method = "post">
 	    		<p> <input type = "text" name = "key" value = "title or date"> 
@@ -42,7 +42,7 @@
             	$current_blog = mysqli_fetch_assoc($result);
             	echo $current_blog['username'];
             	echo $current_blog['date'];
-            	echo "<a href = ".HOSTNAME.".'/showpage.php?blog_id=".$current_blog['Blog_ID']."'>".$current_blog['title']."</a><br>";
+            	echo "<a href = ".MODEL_DIR."/showpage.php?blog_id=".$current_blog['Blog_ID'].">".$current_blog['title']."</a><br>";
             	$rows = $rows - 1;
             }
 		?>

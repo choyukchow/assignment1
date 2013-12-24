@@ -1,6 +1,7 @@
 <?php
-       session_start();
-       unset($_SESSION['valid_user']);
+    include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';          
+    session_start();
+    unset($_SESSION['valid_user']);
 
-       header("Location:login.html"); 
+    header("Location:".VIEW_DIR."/login.html"); 
 ?>
