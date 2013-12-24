@@ -3,5 +3,5 @@
     session_start();
     unset($_SESSION['valid_user']);
 
-    header("Location:".ROOR_DIR."/index.php"); 
+    header('Location:'.ROOT_DIR.'/index.php'); 
 ?>

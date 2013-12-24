@@ -23,7 +23,7 @@
 	    		    <input type = "submit" value = "search"> </p>
 	    	</form> 
 
-            <form action = <?php echo VIEW_DIR.'/newpost.html'?> method = "post">
+            <form action = <?php echo VIEW_DIR.'/newpost.php'?> method = "post">
 	    	    <p> <input type = "submit" value = "New Post"> </p>
 	    	</form> 
 	    </div>
