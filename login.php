@@ -14,7 +14,7 @@
 
        header("Location:default.php"); 
     } else {
-    	echo "Your username or your password is incorrect.";
+    	echo "Your username or your password is incorrect.<br>";
     	echo "<a href = 'login.html'> Go back to the login page. </a>";
     }
 ?>

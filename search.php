@@ -26,7 +26,7 @@
        $key = $_POST['key'];
        $link = mysqli_connect("localhost", "root", "jc119@3fcmx", "assignment1");
 
-       $query = "SELECT * FROM blog WHERE date = '".$key."' or title = '".$key."'"; //how to order by date DESC
+       $query = "SELECT * FROM blog WHERE date = '".$key."' or title LIKE '%$key%'"; //how to order by date DESC
        $result = mysqli_query($link, $query);
        $rows = mysqli_num_rows($result);
 

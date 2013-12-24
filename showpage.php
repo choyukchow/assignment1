@@ -3,7 +3,7 @@
   <title> Show page. </title>
   <style>
     .blogcontent{
-        width: 1200px;
+        width: 100%;
        }
   </style>
 </head>
@@ -19,9 +19,8 @@
     $result_table = mysqli_query($link, $query);
     $result = mysqli_fetch_assoc($result_table);
 
-    echo "<h1>".$result['title']."</h1><br>";
-    echo $result['username'];
-    echo $result['date']."<br>";
+    echo "<h1>".$result['title']."</h1>";
+    echo "<h5>".$result['username']."  ".$result['date']."</h5>";
     echo "<div class='blogcontent'>".nl2br($result['content'])."<br></div>";  
 
     if ($result['username'] === $_SESSION['valid_user']) {
@@ -29,12 +28,12 @@
     }
 
     echo "<form action = 'default.php' method = 'post'>
-            <p> <input type = 'submit' value = 'Back to catalog'> </p>
+            <p> <input type = 'submit' value = 'Home Page'> </p>
           </form>";
 
     //comment
     echo "<form action = 'addcomment.php' method = 'post'>
-             <h6> My Comment </h6>
+             <h3> My Comment </h3>
              <p> <textarea rows='5' cols='50' name = 'comment'>My comment... </textarea> </p>
              <p> <input type = 'hidden' name = 'blog_id' value = '".$blog_id."'> </p>
              <p> <input type = 'submit' value = 'Comment'> </p>
@@ -47,11 +46,13 @@
 
     if ($result_rows === 0) {
       echo "Currently no comment >3<";
+    } else {
+      echo "<h3> Comments </h3>";
     }
 
     while ($result_rows > 0) {
       $current_comment = mysqli_fetch_assoc($result);
-      echo $current_comment['date']."|".$current_comment['username']."  ".$current_comment['comment']."<br>";
+      echo $current_comment['date']."  |  ".$current_comment['username'].": ".$current_comment['comment']."<br>";
       $result_rows = $result_rows - 1;
     }
   ?>
