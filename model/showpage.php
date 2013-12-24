@@ -27,21 +27,26 @@
     echo $result['date']."<br>";
     echo "<div class='blogcontent'>".nl2br($result['content'])."<br></div>";  
 
-    if ($result['username'] === $_SESSION['valid_user']) {
-      echo "<a href=".MODEL_DIR.".'/delete.php?blog_id=$blog_id'> Delete </a> | <a href=".MODEL_DIR.".'/editpage.php?blog_id=$blog_id'> Edit </a>";
+
+    if (isset($_SESSION['valid_user'])) {
+        if ($result['username'] === $_SESSION['valid_user']) {
+            echo "<a href=".MODEL_DIR.".'/delete.php?blog_id=$blog_id'> Delete </a> | <a href=".MODEL_DIR.".'/editpage.php?blog_id=$blog_id'> Edit </a>";
+        }
+
+        echo "<form action = ".VIEW_DIR.".'/default.php' method = 'post'>
+                <p> <input type = 'submit' value = 'Back to catalog'> </p>
+              </form>";
+
+        //comment
+        echo "<form action = ".MODEL_DIR.".'/addcomment.php' method = 'post'>
+                <h6> My Comment </h6>
+                <p> <textarea rows='5' cols='50' name = 'comment'>My comment... </textarea> </p>
+                <p> <input type = 'hidden' name = 'blog_id' value = '".$blog_id."'> </p>
+                <p> <input type = 'submit' value = 'Comment'> </p>
+            </form>";
+    } else {
+        echo '<br><br><br>You need to login to commit!<br><br><br>';
     }
-
-    echo "<form action = ".VIEW_DIR.".'/default.php' method = 'post'>
-            <p> <input type = 'submit' value = 'Back to catalog'> </p>
-          </form>";
-
-    //comment
-    echo "<form action = ".MODEL_DIR.".'/addcomment.php' method = 'post'>
-             <h6> My Comment </h6>
-             <p> <textarea rows='5' cols='50' name = 'comment'>My comment... </textarea> </p>
-             <p> <input type = 'hidden' name = 'blog_id' value = '".$blog_id."'> </p>
-             <p> <input type = 'submit' value = 'Comment'> </p>
-          </form>";
     
     //show comment
     $query = "SELECT * FROM comment WHERE Blog_ID = '".$blog_id."'";
