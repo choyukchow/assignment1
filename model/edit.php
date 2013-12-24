@@ -1,5 +1,5 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT'].'/assignment/config/global.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
     $blog_id = $_POST['blog_id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
@@ -10,5 +10,5 @@
               WHERE Blog_ID = '".$blog_id."'";
     mysqli_query($link, $query);
 
-    header("Location:".VIEW_DIR.".'/default.php'");
+    header('Location:'.VIEW_DIR.'/default.php');
 ?>

@@ -30,7 +30,7 @@
        $key = $_POST['key'];
        $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 
-       $query = "SELECT * FROM blog WHERE date = ".$key." or title LIKE "%$key%" ORDER BY date DESC";
+       $query = "SELECT * FROM blog WHERE date = '".$key."' or title LIKE '%$key%' ORDER BY date DESC";
        $result = mysqli_query($link, $query);
        $rows = mysqli_num_rows($result);
 

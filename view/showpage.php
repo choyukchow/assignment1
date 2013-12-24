@@ -30,10 +30,10 @@
 
     if (isset($_SESSION['valid_user'])) {
         if ($result['username'] === $_SESSION['valid_user']) {
-            echo "<a href=".MODEL_DIR.".'/delete.php?blog_id=$blog_id'> Delete </a> | <a href=".MODEL_DIR.".'/editpage.php?blog_id=$blog_id'> Edit </a>";
+            echo "<a href=".MODEL_DIR."/delete.php?blog_id=$blog_id> Delete </a> | <a href=".MODEL_DIR."/editpage.php?blog_id=$blog_id> Edit </a>";
         }
 
-        echo "<form action = ".VIEW_DIR.".'/default.php' method = 'post'>
+        echo "<form action = ".VIEW_DIR."/default.php method = 'post'>
                 <p> <input type = 'submit' value = 'Back to catalog'> </p>
               </form>";
 

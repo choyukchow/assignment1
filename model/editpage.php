@@ -6,7 +6,7 @@
 <body>
 
   <?php
-      include $_SERVER['DOCUMENT_ROOT'].'/config/global.php';
+      include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
       $blog_id = $_GET['blog_id'];
       echo $blog_id;
       $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
