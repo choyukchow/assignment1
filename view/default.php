@@ -1,4 +1,6 @@
 <?php
+    include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
+    echo MODEL_DIR.'/logout.php';
     session_start();
 ?>
 
@@ -15,7 +17,7 @@
 
 	    <div class = "bar">
 
-	    	<a href = 'logout.php'> Logout </a> | <a href = 'mypage.php'> My Blogs. </a>
+        <a href = <?php echo MODEL_DIR;?>/logout.php> Logout </a> | <a href = VIEW_DIR.'/mypage.php'> My Blogs. </a>
 
 	    	<form action = "search.php" method = "post">
 	    		<p> <input type = "text" name = "key" value = "title or date"> 
