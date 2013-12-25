@@ -1,7 +1,8 @@
 <?php
+    include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';          
     $username = $_POST['username']; 
     $password = $_POST['password'];
-    $link = mysqli_connect("localhost", "root", "jc119@3fcmx", "assignment1");
+    $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 
     $query = "SELECT * FROM passwords WHERE 
               username = '".$username."' and password = '".$password."'";
@@ -12,9 +13,10 @@
        session_start();
        $_SESSION['valid_user']=$username;
 
-       header("Location:default.php"); 
+       header("Location:".VIEW_DIR."/default.php"); 
     } else {
-    	echo "Your username or your password is incorrect.<br>";
-    	echo "<a href = 'login.html'> Go back to the login page. </a>";
+
+    	echo "Your username or your password is incorrect.";
+    	echo "<a href = ".VIEW_DIR.".'/login.php'> Go back to the login page. </a>";
     }
 ?>

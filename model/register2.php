@@ -8,6 +8,7 @@
 <body> 
 
 <?php
+include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
 // define variables and set to empty values
 $nameErr = $passwordErr = "";
 $name = $password = "";

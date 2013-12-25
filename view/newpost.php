@@ -1,15 +1,18 @@
+<?php
+    include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
+?>
 <html>
 <head>
 	<title> New Post </title>
-<head>
+</head>
 
 <body>
-	<form action = "newpost.php" method = "post">
+    <form action = <?php echo MODEL_DIR."/newpost.php";?> method = "post">
 		<p> Title: </p>
 		<p> <input type = "text" name = "title"> </p>
 		<p> Content: </p>
 		<textarea rows="30" cols="80" name = "content">Your Blog. </textarea>
 		<p> <input type = "submit" value = "Post"> </p>
-	</from>
+    </form>
 </body>
 </html>

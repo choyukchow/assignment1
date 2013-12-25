@@ -6,9 +6,10 @@
 <body>
 
   <?php
+      include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
       $blog_id = $_GET['blog_id'];
       echo $blog_id;
-      $link = mysqli_connect("localhost", "root", "jc119@3fcmx", "assignment1");
+      $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 
       $query = "SELECT * FROM blog WHERE Blog_ID = '".$blog_id."'";
       $result = mysqli_query($link, $query);
@@ -17,7 +18,7 @@
       echo $current_blog['title'];
   ?>
 
-  <form action = "edit.php" method = "post">
+      <form action = <?php echo MODEL_DIR."/edit.php";?> method = "post">
 		<p> Title: </p>
 		<p> <input type = "text" name = "title" value = '<?php echo $current_blog['title'] ?>'> </p>
 		<p> Content: </p>
