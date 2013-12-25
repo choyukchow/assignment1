@@ -5,7 +5,7 @@
     $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 
     $query = "SELECT * FROM passwords WHERE username = '".$username."'";
-    if (mysqli_num_rows(mysqli_query($link, $query))){
+    if (mysqli_num_rows(mysqli_query($link, $query)) or empty($username) or empty($passwords)){
         echo 'This username is not avaliable, please choose a another name!<br>';
         echo "<a href = ".VIEW_DIR."/register.php> Back to register page </a>";
     } else {
