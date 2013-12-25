@@ -8,14 +8,12 @@
   <?php
       include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
       $blog_id = $_GET['blog_id'];
-      echo $blog_id;
       $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 
       $query = "SELECT * FROM blog WHERE Blog_ID = '".$blog_id."'";
       $result = mysqli_query($link, $query);
       $current_blog = mysqli_fetch_assoc($result);  
 
-      echo $current_blog['title'];
   ?>
 
       <form action = <?php echo MODEL_DIR."/edit.php";?> method = "post">
