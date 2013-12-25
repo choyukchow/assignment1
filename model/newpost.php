@@ -8,7 +8,7 @@
     $trimmedTitle = trim($title);
     if (empty($trimmedTitle)){
         echo "Title cannot be empty!!!<br>";
-        echo "<a href = ".MODEL_DIR."/newpost.php> Back to new post page </a>";
+        echo "<a href = ".VIEW_DIR."/newpost.php> Back to new post page </a>";
     } else {
         $query = "INSERT INTO blog (username, date, title, content)
             VALUES ('".$_SESSION['valid_user']."', now(), '".$title."', '".$content."')";
