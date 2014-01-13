@@ -6,6 +6,7 @@
 <html>
 <head>
 	<title> My Home Page </title>
+    <link rel="stylesheet" type="text/css" href=<?php echo STATIC_DIR."/defaultStyle.css";?> media="screen" />
 </head>
 
 <body>

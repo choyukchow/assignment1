@@ -4,11 +4,7 @@
 <html>
 <head>
   <title> Show page. </title>
-  <style>
-    .blogcontent{
-        width: 1200px;
-       }
-  </style>
+    <link rel="stylesheet" type="text/css" href=<?php echo STATIC_DIR."/defaultStyle.css";?> media="screen" />
 </head>
 
 <body>
@@ -24,7 +20,7 @@
 
     echo "<h1>".$result['title']."</h1><br>";
     echo $result['username'];
-    echo $result['date']."<br>";
+    echo $result['date']."<br><br>";
     echo "<div class='blogcontent'>".nl2br($result['content'])."<br></div>";  
 
 
@@ -44,8 +40,6 @@
                 <p> <input type = 'hidden' name = 'blog_id' value = '".$blog_id."'> </p>
                 <p> <input type = 'submit' value = 'Comment'> </p>
             </form>";
-    } else {
-        echo '<br><br><br>You need to login to commit!<br><br><br>';
     }
     
     //show comment
@@ -54,7 +48,14 @@
     $result_rows = mysqli_num_rows($result);
 
     if ($result_rows === 0) {
-      echo "Currently no comment >3<";
+      echo "<br><br><br>Currently no comment >3<";
+    }
+
+    if (!isset($_SESSION['valid_user']))
+    {
+        echo "<br><br> You need to ";
+        echo "<a href=".VIEW_DIR."/login.php> login </a>";
+        echo " to comment!";
     }
 
     while ($result_rows > 0) {
