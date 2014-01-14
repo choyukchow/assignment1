@@ -11,9 +11,9 @@
 
 <body>
 	<div id = "header">
-		<h2>
+		<h1>
 			Let's Blog!
-	    </h2>
+	    </h1>
 
 	    <div class = "bar">
 
@@ -30,7 +30,7 @@
 	    </div>
 	</div>
     
-    <h3> What's new? </h3>
+    <h2> What's new? </h2>
 
 	<div id = "blogs">
 		<?php

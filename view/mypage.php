@@ -11,7 +11,7 @@
 
 <body>
 	<div id = "header">
-		<h2>
+		<h1>
 			<?php echo $_SESSION['valid_user']."'s"?> Blog
 	    </h2>
 

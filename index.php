@@ -6,13 +6,14 @@
 <html>
 <head>
 	<title> My Home Page </title>
+    <link rel="stylesheet" type="text/css" href=<?php echo STATIC_DIR."/defaultStyle.css";?> media="screen" />
 </head>
 
 <body>
 	<div id = "header">
-		<h2>
+		<h1>
 			Let's Blog!
-	    </h2>
+	    </h1>
 
 	    <div class = "bar">
 
@@ -32,7 +33,7 @@
 	    </div>
 	</div>
     
-    <h3> What's new? </h3>
+    <h2> What's new? </h2>
 
 	<div id = "blogs">
 		<?php
@@ -43,8 +44,8 @@
 
             while ($rows > 0) {
             	$current_blog = mysqli_fetch_assoc($result);
-            	echo $current_blog['username'];
-            	echo $current_blog['date'];
+            	echo $current_blog['username'].' ';
+            	echo $current_blog['date'].': ';
             	echo "<a href = ".VIEW_DIR."/showpage.php?blog_id=".$current_blog['Blog_ID'].">".$current_blog['title']."</a><br>";
             	$rows = $rows - 1;
             }
