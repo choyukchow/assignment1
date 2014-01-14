@@ -1,10 +1,11 @@
 <html>
 <head>
 	<title> Successful comment! </title>
+    <link rel="stylesheet" type="text/css" href=<?php echo STATIC_DIR."/defaultStyle.css";?> media="screen" />
 </head>
 
 <body>
-  <h2> Successful comment! </h2>
+  <h1> Successful comment! </h1>
 
   <?php
       include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';

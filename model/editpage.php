@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title> Edit my blog. </title>
+    <link rel="stylesheet" type="text/css" href=<?php echo STATIC_DIR."/defaultStyle.css";?> media="screen" />
 </head>
 
 <body>

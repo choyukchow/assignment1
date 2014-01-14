@@ -16,7 +16,6 @@
        header("Location:".VIEW_DIR."/default.php"); 
     } else {
 
-    	echo "Your username or your password is incorrect.";
-    	echo "<a href = ".VIEW_DIR.".'/login.php'> Go back to the login page. </a>";
+        header("Location:".VIEW_DIR."/loginError.php");
     }
 ?>
