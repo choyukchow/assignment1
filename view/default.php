@@ -11,28 +11,35 @@
 
 <body>
 	<div id = "header">
-		<h1>
-			Let's Blog!
-	    </h1>
+      <div id = "customheader">
+        <?php
+                echo "<div class = 'log'>
+                          <a href = ".MODEL_DIR."/logout.php> Logout </a> 
+                    </div>";
+        ?>
+       
+  
+        <div class = "search">
+            <form action = <?php echo MODEL_DIR.'/search.php';?> method = "post">
+               <input type = "text" name = "key" value = "title or date"> 
+               <input type = "submit" value = "search"> 
+            </form> 
+        </div>
+      </div>
+        
+
+		<div class = "title">
+			  What's new?
+        </div>
 
 	    <div class = "bar">
-
-        <a href = <?php echo MODEL_DIR.'/logout.php';?>> Logout </a> | <a href = <?php echo VIEW_DIR.'/mypage.php';?>> My Blogs </a>
-
-        <form action = <?php echo MODEL_DIR.'/search.php';?> method = "post">
-	    		<p> <input type = "text" name = "key" value = "title or date"> 
-	    		    <input type = "submit" value = "search"> </p>
-	    	</form> 
-
-            <form action = <?php echo VIEW_DIR.'/newpost.php'?> method = "post">
-	    	    <p> <input type = "submit" value = "New Post"> </p>
-	    	</form> 
-	    </div>
+            <a href = ".VIEW_DIR."/newpost.php> New Post </a> |
+	    	<a href = ".VIEW_DIR."/mypage.php> My Blogs </a>
+        </div>
 	</div>
-    
-    <h2> What's new? </h2>
 
-	<div id = "blogs">
+	
+	<div id = "content">
 		<?php
 		    $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 		    $query = "SELECT * FROM blog ORDER BY date DESC";
@@ -41,12 +48,21 @@
 
             while ($rows > 0) {
             	$current_blog = mysqli_fetch_assoc($result);
-            	echo $current_blog['username'];
-            	echo $current_blog['date'];
-            	echo "<a href = ".VIEW_DIR."/showpage.php?blog_id=".$current_blog['Blog_ID'].">".$current_blog['title']."</a><br>";
+                echo "<div id = 'post'>";
+            	echo '<div class = "left">'.$current_blog['username'].' ';
+            	echo $current_blog['date'].': </div>';
+            	echo "<div class = 'right'>
+                        <div class = 'title'><a href = ".VIEW_DIR."/showpage.php?blog_id=".$current_blog['Blog_ID'].">".$current_blog['title'].
+                        "</a><br></div>";
+                echo "<div class = 'blogcontent'>".nl2br($current_blog['content'])."</div>";
+                echo "</div><div class = 'bigspace'></div>";
             	$rows = $rows - 1;
             }
+
+            //$rows = mysqli_num_rows($result);
+            //echo "<div class = 'endbar'>".$rows." </div>";
 		?>
+    </div>
    
 </body>
 </html>
