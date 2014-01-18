@@ -27,19 +27,19 @@ a:focus {
     vertical-align: top;
   }
 
-    #header #customheader.log {
+    #header #customheader .log {
     	line-height: 1.6em;
 	    font-size: 0.81em;
 	    letter-spacing: 0;
 	    padding-bottom: 10px;
 	    text-align: right;
-	    display: block;
+	    display: inline-block;
     }
 
-    #header #customheader.search {
+    #header #customheader .search {
 	    padding-bottom: 10px;
 	    text-align: right;
-	    display: block;
+	    display: inline-block;
     }
 
 
