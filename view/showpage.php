@@ -72,18 +72,17 @@
 
         echo "<div id = 'post'>
              <form action = ".MODEL_DIR."/addcomment.php method = 'post'>
-                <p> <textarea rows='5' cols='50' name = 'comment'>My comment... </textarea> </p>
+                <p> <textarea rows='5' cols='97' name = 'comment'>My comment... </textarea> </p>
                 <p> <input type = 'hidden' name = 'blog_id' value = '".$blog_id."'> </p>
                 <p> <input type = 'submit' value = 'Comment'> </p>
-            </form></div>";
+            </form></div><br>";
 
     } else {
-        echo "<br><br> You need to ";
+        echo "<br><br><br><br> You need to ";
         echo "<a href=".VIEW_DIR."/login.php> login </a>";
-        echo " to comment!</div>";
+        echo " to comment!</div><br><br><br>";
     }
     
-    echo "<hr/>";
 
     //show comment
     $query = "SELECT * FROM comment WHERE Blog_ID = '".$blog_id."' ORDER BY date DESC";
@@ -104,7 +103,8 @@
         echo "</div><div class = 'smallspace'></div>";
         $result_rows = $result_rows - 1;
             }
-
+    $rows = mysqli_num_rows($result);
+    echo "<div class = 'endbar'>".$rows." </div>";
 
   ?>
 </body>

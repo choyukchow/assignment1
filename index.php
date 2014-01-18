@@ -1,6 +1,5 @@
 <?php
     include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
-    echo '<link rel="stylesheet" type="text/css" href='.STATIC_DIR.'"/defaultStyle.css" media="screen" />';
     session_start();
 ?>
 
@@ -62,8 +61,8 @@
             	$rows = $rows - 1;
             }
 
-            //$rows = mysqli_num_rows($result);
-            //echo "<div class = 'endbar'>".$rows." </div>";
+            $rows = mysqli_num_rows($result);
+            echo "<div class = 'endbar'>".$rows." </div>";
 		?>
     </div>
    

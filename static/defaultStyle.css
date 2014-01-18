@@ -38,11 +38,22 @@ a:focus {
     }
 
     #header #customheader .search {
-	    padding-bottom: 10px;
-	    text-align: right;
+    	padding-bottom: 10px;
+	    text-align: left;
 	    display: inline-block;
+
     }
 
+    #header #customheader .search input[type="submit"]{
+    	width: 80px;
+          background: #8b00e0;
+          color: #FFFFFF;
+          display: inline-block;
+      }
+
+	#header #customheader .search input[type="text"]{
+          display: inline-block;
+      }
 
     #header .title {
 	    color: #414142;
@@ -75,7 +86,7 @@ a:focus {
 	    color: #FFFFFF;
     }
 
-        #header .bar input.search {
+        #header .bar input .search {
             border: 0;
             width: 78px;
 	        height: 21px;
@@ -83,7 +94,7 @@ a:focus {
             font-size: 18px;
         }
 
-        #header .bar input[type="submit"].searchbottom {
+        #header .bar input[type="submit"] .searchbottom {
             color: black;
         }
 
@@ -161,11 +172,24 @@ a:focus {
           float: right;
       }
 
-      #content #post .right input[type="submit"] #postbottom{
-      	  width: 50px;
+      #content #post input[type="text"]{
+      	height: 23px;
+      }
+
+      #content #post input[type="submit"]{
+      	  width: 100px;
           background: #8b00e0;
           color: #FFFFFF;
           float: right;
+          display: block;
+      }
+
+      #header .search input[type="submit"]{
+      	width: 100px;
+          background: #8b00e0;
+          color: #FFFFFF;
+          float: right;
+          display: inline-block;
       }
 
   #content .endbar{
@@ -179,6 +203,7 @@ a:focus {
 	    background: #8b00e0;
 	    margin-top: 2px;
 	    padding: 0 6px;
+	    display: block;
   }
 
 	

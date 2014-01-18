@@ -40,7 +40,6 @@
   </div>
 
   <?php
-      include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
       $blog_id = $_GET['blog_id'];
       $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 

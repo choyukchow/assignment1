@@ -63,8 +63,8 @@
             	$rows = $rows - 1;
             }
 
-            //$rows = mysqli_num_rows($result);
-            //echo "<div class = 'endbar'>".$rows." </div>";
+            $rows = mysqli_num_rows($result);
+            echo "<div class = 'endbar'>".$rows." </div>";
 		?>
     </div>
    
