@@ -33,8 +33,10 @@
         </div>
 
 	    <div class = "bar">
-        <a href = <?php echo VIEW_DIR."/newpost.php";?>> New Post </a> |
-        <a href = <?php echo VIEW_DIR."/mypage.php"; ?>> My Blogs </a>
+	    	<?php
+                echo "<a href = ".VIEW_DIR."/newpost.php> New Post </a> |
+	    	           <a href = ".VIEW_DIR."/mypage.php> My Blogs </a>";
+	    	?>
         </div>
 	</div>
 
@@ -50,7 +52,7 @@
             	$current_blog = mysqli_fetch_assoc($result);
                 echo "<div id = 'post'>";
             	echo '<div class = "left">'.$current_blog['username'].' ';
-            	echo $current_blog['date'].': </div>';
+            	echo $current_blog['date'].'</div>';
             	echo "<div class = 'right'>
                         <div class = 'title'><a href = ".VIEW_DIR."/showpage.php?blog_id=".$current_blog['Blog_ID'].">".$current_blog['title'].
                         "</a><br></div>";

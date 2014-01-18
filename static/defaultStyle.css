@@ -23,7 +23,7 @@ a:focus {
 }
 
   #header #customheader {
-    display: inline-block;
+    display: block;
     vertical-align: top;
   }
 
@@ -89,11 +89,13 @@ a:focus {
 #content {
 	width: 800px;
 	margin: 30px auto auto auto;
+	display: block;
 }
 
   #content .bigspace{
 	width: 800px;
-	height: 30px;
+	height: 100px;
+	display: block;
   }
   #content #post{
   	width: 800px;
@@ -107,7 +109,7 @@ a:focus {
 		text-decoration: none;
 		background: #8b00e0;
 		padding: 0 6px;
-		display: block;
+		display: inline-block;
 		text-align: right;
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		color: #FFFFFF;
@@ -118,16 +120,20 @@ a:focus {
 		width: 500px;
 		line-height: 1.8em;
 		float: right;
-		font-size: 0.81em;
-		display: block;
+		font-size: 1em;
+        display: block;
+		
 	}
 
-	  #content #post .right .title{
-          font-size: 21px;
-	  }
+      #content #post .right .title{
+        display: inline-block;
+        font-size: 1.8em;
+      }
 
-	  #content #post .right .blogcontent{
-
+	  #content #post .blogcontent{
+	  	  width: 500px;
+	  	  float: right;
+	  	  display: block;
 	  }
 
   #content .endbar{
