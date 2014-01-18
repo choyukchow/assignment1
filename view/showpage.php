@@ -80,7 +80,7 @@
     } else {
         echo "<br><br><br><br> You need to ";
         echo "<a href=".VIEW_DIR."/login.php> login </a>";
-        echo " to comment!</div><br><br><br>";
+        echo " to comment!</div><div class = 'bigspace'> </div><div class = 'bigspace'> </div>";
     }
     
 

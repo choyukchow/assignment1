@@ -54,6 +54,7 @@
 		</div>
 		
 		<input type = "password" name = "password" class = "right"> 
+    <div class = "bigspace"> </div>
 
         <input type = "submit" value = "Login" class = "right"> 
 
