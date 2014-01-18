@@ -33,8 +33,8 @@
         </div>
 
 	    <div class = "bar">
-            <a href = ".VIEW_DIR."/newpost.php> New Post </a> |
-	    	<a href = ".VIEW_DIR."/mypage.php> My Blogs </a>
+        <a href = <?php echo VIEW_DIR."/newpost.php";?>> New Post </a> |
+        <a href = <?php echo VIEW_DIR."/mypage.php"; ?>> My Blogs </a>
         </div>
 	</div>
 
