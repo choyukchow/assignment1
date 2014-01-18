@@ -16,6 +16,7 @@ a:focus {
 	outline: 0;
 }
 
+
 #header {
 	width: 800px;
 	margin: auto;
@@ -92,6 +93,12 @@ a:focus {
 	display: block;
 }
 
+  #content .smallspace{
+	width: 800px;
+	height: 50px;
+	display: block;
+  }
+
   #content .bigspace{
 	width: 800px;
 	height: 100px;
@@ -101,6 +108,14 @@ a:focus {
   	width: 800px;
     position: relative;
   }
+  #header .bar {
+	    width: 788px;
+	    height: 21px;
+	    line-height: 1.8em;
+	    background: #8b00e0;
+	    margin-top: 2px;
+	    padding: 0 6px;
+    }
 
     #content #post .left {
 		width: 270px;
@@ -121,8 +136,7 @@ a:focus {
 		line-height: 1.8em;
 		float: right;
 		font-size: 1em;
-        display: block;
-		
+        display: block;		
 	}
 
       #content #post .right .title{
@@ -130,11 +144,29 @@ a:focus {
         font-size: 1.8em;
       }
 
+      #content #post .right .delete_edit{
+        text-align: right;
+      }
+
+
 	  #content #post .blogcontent{
 	  	  width: 500px;
 	  	  float: right;
 	  	  display: block;
 	  }
+      
+      #content #post .right textarea{
+          height: 200px;
+          width: 500px;
+          float: right;
+      }
+
+      #content #post .right input[type="submit"] #postbottom{
+      	  width: 50px;
+          background: #8b00e0;
+          color: #FFFFFF;
+          float: right;
+      }
 
   #content .endbar{
   	  width: 788px;

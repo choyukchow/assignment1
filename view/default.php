@@ -29,7 +29,9 @@
         
 
 		<div class = "title">
-			  What's new?
+			  <?php
+			     echo $_SESSION['valid_user']."'s Home";
+			  ?>
         </div>
 
 	    <div class = "bar">

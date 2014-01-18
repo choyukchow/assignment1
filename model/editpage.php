@@ -1,3 +1,7 @@
+<?php
+    include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
+?>
+
 <html>
 <head>
 	<title> Edit my blog. </title>
@@ -5,6 +9,35 @@
 </head>
 
 <body>
+  <div id = "header">
+      <div id = "customheader">
+        <?php
+                echo "<div class = 'log'>
+                          <a href = ".MODEL_DIR."/logout.php> Logout </a> 
+                    </div>";
+        ?>
+       
+  
+        <div class = "search">
+            <form action = <?php echo MODEL_DIR.'/search.php';?> method = "post">
+               <input type = "text" name = "key" value = "title or date"> 
+               <input type = "submit" value = "search"> 
+            </form> 
+        </div>
+      </div>
+        
+
+    <div class = "title">
+        Edit My Blog
+        </div>
+
+      <div class = "bar">
+        <?php
+                echo "<a href = ".VIEW_DIR."/default.php> Home Page </a> | 
+                       <a href = ".VIEW_DIR."/mypage.php> My Blogs </a>";
+        ?>
+        </div>
+  </div>
 
   <?php
       include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
@@ -16,14 +49,27 @@
       $current_blog = mysqli_fetch_assoc($result);  
 
   ?>
+  <div id = "content"> 
+    <div id = "post"> 
+    <form action = <?php echo MODEL_DIR."/edit.php";?> method = "post">
+    <div class = "left">
+      Title: 
+      </div>
+      
+    <input type = "text" name = "title" class = "right"> 
 
-      <form action = <?php echo MODEL_DIR."/edit.php";?> method = "post">
-		<p> Title: </p>
-		<p> <input type = "text" name = "title" value = '<?php echo $current_blog['title'] ?>'> </p>
-		<p> Content: </p>
-		<textarea rows="30" cols="80" name = "content"> <?php echo $current_blog['content'] ?> </textarea>
-		<p> <input type = "submit" value = "Post"> </p>
-		<p> <input type = "hidden" name = "blog_id" value = "<?php echo $blog_id ?>" > </p>
-	</from>
+    <div class = 'smallspace'></div>
 
+    <div class = "left">
+      Content:
+    </div>
+      
+    <textarea rows="10" cols="50" name = "content" class = "right">Your Blog. </textarea>
+
+    <div class = 'smallspace'></div>
+
+      <input type = "submit" value = "Post" class = "right">
+    </form>
+    </div>
+    </div>
 </body>

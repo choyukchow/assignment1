@@ -9,12 +9,37 @@
 </head>
 
 <body>
-    <div id = "header">
-        <h2>
-            Login Error! Please double check your username and password :)
-        </h2>
+	<div id = "header">
+      <div id = "customheader">
+        <?php            
+                echo "<div class = 'log'>
+                          <a href = ".VIEW_DIR."/login.php> Login </a> | <a href = ".VIEW_DIR."/register.php> Register </a>
+                    </div>";          
+        ?>
+       
+  
+        <div class = "search">
+            <form action = <?php echo MODEL_DIR.'/search.php';?> method = "post">
+               <input type = "text" name = "key" value = "title or date"> 
+               <input type = "submit" value = "search"> 
+            </form> 
+        </div>
+      </div>
+        
 
-        <a href = <?php echo VIEW_DIR."/login.php"; ?>> Go Back To Login Page </a>
+		<div class = "title">
+			 Login Error! 
+        </div>
+
+	    <div class = "bar">
+        </div>
+	</div>
+
+    <div id = "content">
+       
+         Please double check your username and password :)        
+
+        <p><a href = <?php echo VIEW_DIR."/login.php"; ?>> Go Back To Login Page </a></p>
     </div>
 </body>
 </html>
