@@ -1,3 +1,8 @@
+<?php
+    include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
+    session_start();
+?>
+
 <html>
 <head>
 	<title> Successful comment! </title>
@@ -8,10 +13,9 @@
   <h1> Successful comment! </h1>
 
   <?php
-      include $_SERVER['DOCUMENT_ROOT'].'/assignment1/config/global.php';
-      session_start();
       $comment = $_POST['comment'];
       $blog_id = $_POST['blog_id'];
+
       $link = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
 
       $query = "INSERT INTO comment (Blog_ID, date, username, comment)
