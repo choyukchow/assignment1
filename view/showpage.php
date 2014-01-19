@@ -87,7 +87,10 @@
     //show comment
     $query = "SELECT * FROM comment WHERE Blog_ID = '".$blog_id."' ORDER BY date DESC";
     $result = mysqli_query($link, $query);
-    $result_rows = mysqli_num_rows($result);
+    if ($result)
+        $result_rows = mysqli_num_rows($result);
+    else
+        $result_rows = 0;
 
     if ($result_rows === 0) {
       echo "<div id = 'post'><br><br><br>Currently no comment >3< </div>";
@@ -102,9 +105,12 @@
         echo "<div class = 'blogcontent'>".nl2br($current_comment['comment'])."</div>";
         echo "</div><div class = 'smallspace'></div>";
         $result_rows = $result_rows - 1;
-            }
-    $rows = mysqli_num_rows($result);
+    }
+    if ($result)
+        $rows = mysqli_num_rows($result);
+    else
+        $rows = 0;
     echo "<div class = 'endbar'>".$rows." </div>";
 
-  ?>
+?>
 </body>

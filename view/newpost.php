@@ -55,7 +55,7 @@
 		  
 		<textarea rows="10" cols="50" name = "content" class = "right">Your Blog. </textarea>
 
-    <div class = 'smallspace'></div>
+    <div class = 'bigspace'></div>
     <div class = 'bigspace'></div>
     <div class = 'bigspace'></div>
 
